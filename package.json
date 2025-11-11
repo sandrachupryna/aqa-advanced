@@ -1,0 +1,26 @@
+{
+  "name": "aqa-advanced",
+  "version": "1.0.0",
+  "description": "AQA course: JavaScript, Playwright, Cypress",
+  "keywords": [
+    "node"
+  ],
+  "homepage": "https://github.com/sandrachupryna/aqa-advanced#readme",
+  "bugs": {
+    "url": "https://github.com/sandrachupryna/aqa-advanced/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandrachupryna/aqa-advanced.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "run:app": "node node-basics/index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
+}
