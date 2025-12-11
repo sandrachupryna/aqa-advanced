@@ -1,8 +1,8 @@
 export class Book {
     constructor(title, author, year) {
-        this._title = title;
-        this._author = author;
-        this._year = year;
+        this._title = this.#validatteTitle(title);
+        this._author = this.#validateAuthor(author);
+        this._year = this.#validateYear(year);
     }
 
     printInfo() {
@@ -22,29 +22,39 @@ export class Book {
     } 
 
     set title(newTitle) {
-        if (!newTitle || typeof newTitle !== 'string' || newTitle.trim() === '') {
-            throw new Error("Назва книги повинна бути непорожнім рядком");
-        } else {
-            this._title = newTitle;
-        }
+        this._title = this.#validatteTitle(newTitle);
     }
 
     set author(newAuthor) {
-        if (!newAuthor || typeof newAuthor !== 'string' || newAuthor.trim() === '') {
-            throw new Error("Ім'я автора повинно бути непорожнім рядком");
-        } else {
-            this._author = newAuthor;
-        }   
+       this._author = this.#validateAuthor(newAuthor);
     }
 
     set year(newYear) {
-        const currentYear = new Date().getFullYear();
-        if (typeof newYear !== 'number' || newYear < 0 || newYear > currentYear) {
-            throw new Error(`Рік видавництва повинен бути числом від 0 до ${currentYear}`);
-        } else {
-            this._year = newYear;
-        }   
+        this._year = this.#validateYear(newYear);
     }
+
+    #validatteTitle(title) {
+         if (!title || typeof title !== 'string' || title.trim() === '') {
+            throw new Error("Назва книги повинна бути непорожнім рядком");
+        }
+        return title;
+    }
+
+    #validateAuthor(author) {
+        if (!author || typeof author !== 'string' || author.trim() === '') {
+            throw new Error("Ім'я автора повинно бути непорожнім рядком");
+        }
+        return author;
+    }
+
+    #validateYear(year) {
+        const currentYear = new Date().getFullYear();
+        if (typeof year !== 'number' || year < 0 || year > currentYear) {
+            throw new Error(`Рік видавництва повинен бути числом від 0 до ${currentYear}`);
+        }
+        return year;
+    }
+
 
     static getOldestBook(books) {
         if (!Array.isArray(books) || books.length === 0) {

@@ -57,5 +57,4 @@ console.log(`Найстаріша книга: "${oldestBook.title}", автор 
 const convertedEBook1 = EBook.convertToEBook(book3, "FB2");
 convertedEBook1.printInfo();
 // EBook.convertToEBook({ title: "book", author: "author", year: 1900}, "PDF"); // помилка    
-const convertedEBook2 = EBook.convertToEBook(book3, "TXT"); //має бути помилка
-convertedEBook2.printInfo();
+// const convertedEBook2 = EBook.convertToEBook(book3, "TXT"); // помилка, оскільки у конструкторі EBook відбувається валідація формату файлу
