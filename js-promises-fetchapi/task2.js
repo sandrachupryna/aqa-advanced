@@ -26,17 +26,18 @@ function getUser(){
             });
 }
 
-
+const toDoPromise = getToDo();
+const userPromise = getUser();
 // To check result of both promises
-const promiseCollectionSettled =  Promise.allSettled([getToDo(), getUser()]);
+const promiseCollectionSettled =  Promise.allSettled([toDoPromise, userPromise]);
 promiseCollectionSettled.then( x => console.log('All Settled:', x) );
 
-const promiseCollectionAll =  Promise.all([getToDo(), getUser()]);
+const promiseCollectionAll =  Promise.all([toDoPromise, userPromise]);
 promiseCollectionAll
     .then(x => console.log('Promise.All Resolved:', x))
     .catch(error => console.error('Promise.All Rejected:', error));
 
-const promiseCollectionRace = Promise.race([getToDo(), getUser()]);
+const promiseCollectionRace = Promise.race([toDoPromise, userPromise]);
 promiseCollectionRace
     .then(x => console.log('Promise.Race Winner:', x))
     .catch(error => console.error('Promise.Race Winner Rejected:', error));
