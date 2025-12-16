@@ -26,8 +26,14 @@ async function getUser(){
   }
 }
 
-const toDoPromise = getToDo();
-const userPromise = getUser();
+const toDo = await getToDo(); // return resolved value, i.e. the fetched object toDo
+const user = await getUser(); // return resolved value, i.e. the fetched object user
+
+console.log('ToDo Object:', toDo);
+console.log('User Object:', user);
+
+const toDoPromise = getToDo(); // return a promise
+const userPromise = getUser(); // return a promise
 
 // To check result of both promises
 const promiseCollectionSettled =  Promise.allSettled([toDoPromise, userPromise]);
