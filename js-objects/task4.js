@@ -1,10 +1,10 @@
 const person = {
-    firstName: "John",
-    lastName: "Johnson",
-    age: 28
+  firstName: 'John',
+  lastName: 'Johnson',
+  age: 28,
 };
 // add new property
-person.email = "jj@gmail.com";
+person.email = 'jj@gmail.com';
 // delete property
 delete person.age;
 
