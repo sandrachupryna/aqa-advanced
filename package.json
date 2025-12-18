@@ -20,12 +20,18 @@
   "scripts": {
     "run:app": "node node-basics/index.js",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,js,json,md}\""
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\"",
+    "lint": "eslint . --ext .js,.ts",
+    "lint:fix": "eslint . --ext .ts,.js --fix"
   },
   "dependencies": {
     "chalk": "^5.6.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@eslint/json": "^0.14.0",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
     "prettier": "3.7.4"
   }
 }

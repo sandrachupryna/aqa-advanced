@@ -9,7 +9,7 @@ console.log(
     .concat(':')
 );
 console.log(
-  '1. The main actors in the movie \"Mr. & Mrs. Smith\" are  ' +
+  '1. The main actors in the movie "Mr. & Mrs. Smith" are  ' +
     firstPersonName +
     ' and ' +
     secondPersonName +

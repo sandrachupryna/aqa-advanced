@@ -4,7 +4,7 @@
 
 function deleteKeys(obj, keys) {
   const newObj = { ...obj };
-  for (let key of keys) {
+  for (const key of keys) {
     delete newObj[key];
   }
   return newObj;
@@ -19,9 +19,9 @@ console.log(
 );
 
 // Alternative solution: copying of object without destructurization, using for..of loop
-function deleteKeys(obj, keys) {
+function deleteKeysAlt(obj, keys) {
   const resObj = {};
-  for (let originalKey of Object.keys(obj)) {
+  for (const originalKey of Object.keys(obj)) {
     if (!keys.includes(originalKey)) {
       resObj[originalKey] = obj[originalKey];
     }
