@@ -10,13 +10,13 @@ function isObjectsEqual(obj1, obj2) {
   if (Object.keys(obj1).length !== Object.keys(obj2).length) {
     return false;
   }
-  for (let key of Object.keys(obj1)) {
+  for (const key of Object.keys(obj1)) {
     if (!Object.keys(obj2).includes(key)) {
       return false;
     }
   }
 
-  for (let key of Object.keys(obj1)) {
+  for (const key of Object.keys(obj1)) {
     if (typeof obj1[key] === 'string' && typeof obj2[key] === 'string') {
       if (obj1[key].toLowerCase() !== obj2[key].toLowerCase()) {
         return false;
