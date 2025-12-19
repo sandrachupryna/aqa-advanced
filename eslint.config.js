@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 import json from '@eslint/json';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import eslintConfigPrettier from 'eslint-config-prettier/flat';
 
 export default defineConfig([
   globalIgnores(['node_modules/**', 'lesson-notes/**', 'package-lock.json']),
@@ -31,4 +32,5 @@ export default defineConfig([
     ...json.configs.recommended,
     language: 'json/jsonc',
   },
+  eslintConfigPrettier,
 ]);
